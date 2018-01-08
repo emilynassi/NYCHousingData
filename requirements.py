@@ -1,9 +1,10 @@
 #Dependencies
 import pandas as pd 
-import matplotlib as plt
+from matplotlib import pyplot as plt
 import numpy as np 
 import seaborn as sns 
 import requests as req
+import random 
 
 #Read CSVs and Combine to One Dataframe
 file_one = "rollingsales_bronx.csv"
@@ -17,8 +18,10 @@ brooklyn_pd = pd.read_csv(file_two)
 manhattan_pd = pd.read_csv(file_three)
 queens_pd = pd.read_csv(file_four)
 staten_island_pd = pd.read_csv(file_five)
-
 sales_df = pd.concat([manhattan_pd, bronx_pd, brooklyn_pd, queens_pd, staten_island_pd])
-sales_df.dropna(axis=0, how='any', thresh=3, subset=None, inplace=False)
 
-sales_df["BOROUGH"].astype(str).replace("1.0", "Manhattan")
+#Clean missing rows, change Borough numbers to names and sort out residential buildings
+sales_df = sales_df.replace('-', np.nan).dropna()
+sales_df['BOROUGH'] = sales_df['BOROUGH'].map({1:'Manhattan', 2:'Bronx', 3:'Brooklyn', 4:'Queens', 5:'Staten Island'})
+
+sales_df.head()
