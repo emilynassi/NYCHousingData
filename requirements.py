@@ -30,4 +30,39 @@ sales_df = sales_df.replace('-', np.nan).dropna()
 sales_df = sales_df[~sales_df['BUILDING CLASS'].isin(['11A'])]
 sales_df[['BUILDING CLASS']] = sales_df[['BUILDING CLASS']].apply(pd.to_numeric)
 
+#Use Loop to sort out residential buildings
+
+# Create a list to store the data
+sale_type = []
+
+# For each row in the column,
+for row in sales_df['BUILDING CLASS']:
+    if row < 4 :
+        sale_type.append('Residential Sale')
+    elif row == 6:
+        sale_type.append('Residential Sale')
+    elif row == 9:
+        sale_type.append('Residential Sale')
+    elif row == 10:
+        sale_type.append('Residential Sale')
+    elif row == 12:
+        sale_type.append('Residential Sale')
+    elif row == 13:
+        sale_type.append('Residential Sale')
+    elif row == 15:
+        sale_type.append('Residential Sale')
+    elif row == 16:
+        sale_type.append('Residential Sale')
+    elif row == 17:
+        sale_type.append('Residential Sale')
+    else:
+        # Append Other
+        sale_type.append('Other')
+        
+# Create a column from the list
+sales_df['sale_type'] = sale_type
+
+sales_df = sales_df[~sales_df['sale_type'].isin(['Other'])]
+
 sales_df
+
