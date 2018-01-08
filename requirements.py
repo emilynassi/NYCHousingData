@@ -23,5 +23,11 @@ sales_df = pd.concat([manhattan_pd, bronx_pd, brooklyn_pd, queens_pd, staten_isl
 #Clean missing rows, change Borough numbers to names and sort out residential buildings
 sales_df = sales_df.replace('-', np.nan).dropna()
 sales_df['BOROUGH'] = sales_df['BOROUGH'].map({1:'Manhattan', 2:'Bronx', 3:'Brooklyn', 4:'Queens', 5:'Staten Island'})
+sales_df['BUILDING CLASS'], sales_df['CATEGORY'] = sales_df['BUILDING CLASS CATEGORY'].str.split(' ', 1).str
+del (sales_df['BUILDING CLASS CATEGORY'], sales_df['BLOCK'], sales_df['LOT'],  sales_df['EASE-MENT'],  sales_df['TAX CLASS AT PRESENT'],
+     sales_df['TAX CLASS AT TIME OF SALE'])
+sales_df = sales_df.replace('-', np.nan).dropna()
+sales_df = sales_df[~sales_df['BUILDING CLASS'].isin(['11A'])]
+sales_df[['BUILDING CLASS']] = sales_df[['BUILDING CLASS']].apply(pd.to_numeric)
 
-sales_df.head()
+sales_df
