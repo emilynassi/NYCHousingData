@@ -1,3 +1,15 @@
+#Dependencies
+import pandas as pd 
+from matplotlib import pyplot as plt
+import numpy as np 
+import seaborn as sns 
+import requests as req
+import random 
+from requirements import CreateDataframe 
+dataframe = CreateDataframe()
+
+dataframe.head()
+
 #Sales Per Borough
 from requirements import *
 
