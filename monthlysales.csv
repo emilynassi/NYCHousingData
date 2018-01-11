@@ -1,0 +1,61 @@
+SALE MONTH,BOROUGH,COUNT
+January,Queens,1890
+January,Brooklyn,1530
+January,Manhattan,1361
+January,Staten Island,599
+January,Bronx,431
+February,Queens,1804
+February,Brooklyn,1441
+February,Manhattan,1165
+February,Staten Island,553
+February,Bronx,452
+March,Queens,2198
+March,Brooklyn,1821
+March,Manhattan,1301
+March,Staten Island,679
+March,Bronx,510
+April,Queens,1851
+April,Brooklyn,1384
+April,Manhattan,1170
+April,Staten Island,567
+April,Bronx,513
+May,Queens,2092
+May,Brooklyn,1676
+May,Manhattan,1491
+May,Staten Island,652
+May,Bronx,540
+June,Queens,2216
+June,Brooklyn,1891
+June,Manhattan,1658
+June,Staten Island,825
+June,Bronx,574
+July,Queens,1886
+July,Brooklyn,1475
+July,Manhattan,1331
+July,Staten Island,590
+July,Bronx,458
+August,Queens,2355
+August,Brooklyn,1815
+August,Manhattan,1775
+August,Staten Island,741
+August,Bronx,552
+September,Queens,1962
+September,Brooklyn,1479
+September,Manhattan,1242
+September,Staten Island,622
+September,Bronx,480
+October,Queens,2058
+October,Brooklyn,1438
+October,Manhattan,1231
+October,Staten Island,670
+October,Bronx,535
+November,Queens,1506
+November,Brooklyn,1152
+November,Manhattan,930
+November,Bronx,372
+November,Staten Island,167
+December,Queens,2134
+December,Brooklyn,1746
+December,Manhattan,1386
+December,Staten Island,648
+December,Bronx,498
