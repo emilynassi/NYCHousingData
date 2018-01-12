@@ -116,10 +116,6 @@ borough_2_df.index = borough_2_df.index.str.title()
 borough_3_df.index = borough_3_df.index.str.title()
 
 
-
-
-
-#Scatter Plot Data Frames
 average_price = sales_df.groupby(["BOROUGH"])[" SALE PRICE "].mean()
 
 avg_price_df = pd.DataFrame(average_price)
@@ -128,15 +124,27 @@ avg_price_crime_df = pd.DataFrame({"Sale Price":average_price,"Total Crime":boro
 
 
 #Crime vs Sales Scatter Plot
-
 x = avg_price_crime_df["Sale Price"]
 
 y = avg_price_crime_df["Total Crime"]
 
-area = np.pi * (2000000 * np.random.rand(N))**2  # 0 to 15 point radii
+blues = sns.color_palette("Blues_r")
 
-plt.scatter(x, y, alpha=0.5, s=300)
+
+plt.scatter(x, y, alpha=0.75, s=500, color=blues)
 plt.title("Total Crime Vs Total Sales Per Borough")
+plt.xlabel("Total Sales")
+plt.ylabel("Total # of Crimes")
+
+handles = [matplotlib.lines.Line2D([],[], marker="o", color=c, linestyle="none") for c in blues]
+
+plt.legend(handles=handles, labels=list(avg_price_crime_df.index.values), 
+           loc='upper left', prop={'size':6}, bbox_to_anchor=(1,1),ncol=1, numpoints=1)
+
+plt.gca().get_legend_handles_labels()[0]; [handle.set_markersize(10) for handle in handles]
+
+
+#plt.legend(loc='lower right')
 
 
 
