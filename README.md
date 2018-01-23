@@ -16,9 +16,7 @@ This project explores NYC Housing data from the last year (2017), and uncovers t
 
 ## Contributors
 [Linda Farley](https://github.com/lindafarley)
-
 [Emily Nassi](https://github.com/emilynassi)
-
 [Zach Quasney](https://github.com/quasney24)
 
 
